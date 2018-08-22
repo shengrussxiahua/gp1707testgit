@@ -7,7 +7,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * 所有纬度类的顶级父类
+ * 所有维度类的顶级父类
  */
 public abstract class BaseDimension implements WritableComparable<BaseDimension> {
     //do nothing

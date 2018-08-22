@@ -1,6 +1,7 @@
 package com.qianfeng.util;
 
 
+import com.qianfeng.common.DateEnum;
 import org.apache.commons.lang.StringUtils;
 
 import java.text.ParseException;
@@ -101,5 +102,51 @@ public class TimeUtil {
         System.out.println(TimeUtil.getYesterday());
         System.out.println(TimeUtil.parseString2Long("2018-08-17"));
         System.out.println(TimeUtil.parseLong2String(1534435200000L));
+    }
+
+    /**
+     * 获取日期信息
+     */
+
+    public static int getDateInfo(long time, DateEnum type) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);//
+        if (type.equals(DateEnum.YEAR)) {
+            return calendar.get(Calendar.YEAR);
+        }
+        if (type.equals(DateEnum.SEASON)) {
+            int month = calendar.get(Calendar.MONTH);
+            return month % 3 == 0 ? month / 3 : (month / 3 + 1);
+        }
+        if (type.equals(DateEnum.MONTH)) {
+            return calendar.get(Calendar.MONTH);
+        }
+        if (type.equals(DateEnum.WEEK)) {
+            return calendar.get(Calendar.WEEK_OF_YEAR);
+        }
+        if (type.equals(DateEnum.DAY)) {
+            return calendar.get(Calendar.DAY_OF_MONTH);
+        }
+        if (type.equals(DateEnum.HOUR)) {
+            return calendar.get(Calendar.HOUR_OF_DAY);
+        }
+        throw new RuntimeException("不支持该类型的日期信息获取，type：" + type.dateType);
+    }
+
+    /**
+     * 获取时间戳所在周的第一天的时间戳
+     *
+     * @param time
+     * @return
+     */
+    public static long getFirstDayOfWeek(long time) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+        calendar.set(Calendar.DAY_OF_WEEK, 1);//该周的第一天
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTimeInMillis();
     }
 }
