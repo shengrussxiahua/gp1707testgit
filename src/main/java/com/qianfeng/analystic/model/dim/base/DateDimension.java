@@ -128,7 +128,8 @@ public class DateDimension extends BaseDimension {
     }
 
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+
+        this.type = type;
     }
 
     @Override
@@ -178,7 +179,8 @@ public class DateDimension extends BaseDimension {
         }
 
         // TODO: 2018/8/20 compareTo
-        return this.type.compareTo(other.type);
+        tmp = this.type.compareTo(other.type);
+        return tmp;
 
     }
 
