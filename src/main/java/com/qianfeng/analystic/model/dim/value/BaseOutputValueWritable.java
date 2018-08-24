@@ -1,6 +1,6 @@
 package com.qianfeng.analystic.model.dim.value;
 
-import com.persist.common.KpiType;
+import com.qianfeng.common.KpiType;
 import org.apache.hadoop.io.Writable;
 
 /**
@@ -14,5 +14,5 @@ public abstract class BaseOutputValueWritable implements Writable {
      * 到底是新增用户还是活跃用户
      * @return KpiType
      */
-    public abstract KpiType getKpi();
+    public abstract KpiType getKpi();//统计什么指标
 }

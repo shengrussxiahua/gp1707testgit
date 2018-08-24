@@ -18,15 +18,15 @@ public class BrowserDimension extends BaseDimension {
     public BrowserDimension() {
     }
 
-    public BrowserDimension(String browser_name, String browser_version) {
-        this.browserName = browser_name;
-        this.browserVersion = browser_version;
+    public BrowserDimension(String browserName, String browserVersion) {
+        this.browserName = browserName;
+        this.browserVersion = browserVersion;
     }
 
-    public BrowserDimension(int id, String browser_name, String browser_version) {
+    public BrowserDimension(int id, String browserName, String browserVersion) {
         this.id = id;
-        this.browserName = browser_name;
-        this.browserVersion = browser_version;
+        this.browserName = browserName;
+        this.browserVersion = browserVersion;
     }
 
     public int getId() {
