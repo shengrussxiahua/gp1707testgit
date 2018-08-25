@@ -35,6 +35,7 @@ public class JdbcUtil {
 
     /**
      * 关闭相关对象
+     * 关闭连接
      */
     public static void Close(Connection conn, PreparedStatement ps, ResultSet rs) {
         if (conn != null) {
@@ -56,7 +57,7 @@ public class JdbcUtil {
             try {
                 rs.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+                //do nothing
             }
 
 

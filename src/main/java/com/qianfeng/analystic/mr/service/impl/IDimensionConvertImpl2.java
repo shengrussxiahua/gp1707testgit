@@ -1,7 +1,7 @@
-package com.qianfeng.etil.mr.service.impl;
+package com.qianfeng.analystic.mr.service.impl;
 
 import com.qianfeng.analystic.model.dim.base.*;
-import com.qianfeng.etil.mr.service.IDimensionConvert;
+import com.qianfeng.analystic.mr.service.IDimensionConvert1;
 import com.qianfeng.util.JdbcUtil;
 import org.apache.log4j.Logger;
 
@@ -9,8 +9,8 @@ import java.sql.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class IDimensionConvertImpl implements IDimensionConvert {
-    private static final Logger logger = Logger.getLogger(IDimensionConvertImpl.class);
+public class IDimensionConvertImpl2 implements IDimensionConvert1 {
+    private static final Logger logger = Logger.getLogger(IDimensionConvertImpl2.class);
     //key维度:value维度对应的id 缓存
     private Map<String, Integer> cache = new LinkedHashMap<String, Integer>() {
         @Override
@@ -131,13 +131,7 @@ public class IDimensionConvertImpl implements IDimensionConvert {
     //构建缓存key
     private String buildCacheKey(BaseDimension dimension) {
         StringBuffer sb = new StringBuffer();
-        if (dimension instanceof DateDimension) {
-            sb.append("date_");
-            DateDimension date = (DateDimension) dimension;
-            sb.append(date.getYear()).append(date.getSeason())
-                    .append(date.getMonth()).append(date.getWeek())
-                    .append(date.getDay()).append(date.getType());
-        } else if (dimension instanceof PlatformDimension) {
+        if (dimension instanceof PlatformDimension) {
             sb.append("platform_");
             PlatformDimension platform = (PlatformDimension) dimension;
             sb.append(platform.getPlatformName());

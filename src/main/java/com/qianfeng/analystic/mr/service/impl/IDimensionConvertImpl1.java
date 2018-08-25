@@ -1,8 +1,8 @@
-//package com.qianfeng.etil.mr.service.impl;
+//package com.qianfeng.analystic.mr.service.impl;
 //
 //import com.mysql.jdbc.PreparedStatement;
 //import com.qianfeng.analystic.model.dim.base.BaseDimension;
-//import com.qianfeng.etil.mr.service.IDimensionConvert;
+//import com.qianfeng.analystic.mr.service.IDimensionConvert;
 //import com.qianfeng.util.JdbcUtil;
 //
 //import java.sql.Connection;

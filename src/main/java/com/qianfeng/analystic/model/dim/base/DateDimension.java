@@ -16,12 +16,12 @@ import java.util.Objects;
  * @author zhoujiaojiao
  */
 public class DateDimension extends BaseDimension {
-    private Integer id;
-    private Integer year;
-    private Integer season;
-    private Integer month;
-    private Integer week;
-    private Integer day;
+    private int id;
+    private int year;
+    private int season;
+    private int month;
+    private int week;
+    private int day;
     private Date calendar = new Date();// 日期
     private String type;//指标类型 例如:天指标
 
